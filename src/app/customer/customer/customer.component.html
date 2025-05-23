@@ -1,0 +1,87 @@
+<!-- Main wrapper for the customer page -->
+<div class="customer-page">
+
+  <!-- Header section -->
+  <div class="header">
+    <div class="logo-container">
+     
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/GTCO_logo.svg/1200px-GTCO_logo.svg.png"
+           alt="GT Bank Logo" class="logo">
+    </div>
+    <span class="example-spacer"></span>
+    <h1>Customer Management App</h1>
+  </div>
+
+  
+  <div class="add-button-container">
+    <button (click)="navigateToCreateCustomer()" 
+            mat-raised-button 
+            color="accent" 
+            aria-label="Add new item" 
+            class="add-customer-btn">
+      <span class="btn-text">+ Add Customer</span>
+    </button>
+  </div>
+
+ 
+  <div class="content">
+
+   
+    <app-customer-filter></app-customer-filter>
+
+
+    <div class="customer-table-container">
+      <h3>Customer List</h3>
+
+    
+      <table class="customer-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Zip Code</th>
+            <th>Website</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+          <tr *ngFor="let customer of customers$ | async" 
+              (click)="viewCustomer(customer)"
+              [class.selected]="(selectedCustomer$ | async)?.id === customer.id">
+            
+            
+            <td class="clickable-name" 
+                (click)="viewCustomer(customer); $event.stopPropagation()">
+              {{ customer.name }}
+            </td>
+
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.phoneNumber }}</td>
+            <td>{{ customer.zipCode }}</td>
+            <td>{{ customer.website }}</td>
+
+           
+            <td class="actions">
+              <button class="btn-edit" 
+                      (click)="editCustomer(customer, $event)">
+                Edit
+              </button>
+              <button class="btn-delete" 
+                      (click)="deleteCustomer(customer, $event)">
+                Delete
+              </button>
+            </td>
+          </tr>
+
+          
+          <tr *ngIf="(customers$ | async)?.length === 0">
+            <td colspan="6" class="no-data">No customers found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

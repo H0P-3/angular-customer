@@ -1,0 +1,11 @@
+<!-- CustomerFilterComponent -->
+<div class="filter-container">
+  <div class="filter-card">
+    <h3>Filter Customers</h3>
+    <div class="input-group">
+      <input type="text" [formControl]="filterControl" placeholder="Enter search term...">
+      <button class="clear-btn" (click)="clearFilter()" *ngIf="filterControl.value">Clear</button>
+    </div>
+    <p class="hint">Filter by name, address, phone, zip code or website</p>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="customer-details-dialog">
+  <h2>Customer Details</h2>
+  
+  <div class="customer-info">
+    <div class="info-row">
+      <span class="label">Name:</span>
+      <span class="value">{{ data.customer.name }}</span>
+    </div>
+    
+    <div class="info-row">
+      <span class="label">Address:</span>
+      <span class="value">{{ data.customer.address }}</span>
+    </div>
+    
+    <div class="info-row">
+      <span class="label">Phone Number:</span>
+      <span class="value">{{ data.customer.phoneNumber }}</span>
+    </div>
+    
+    <div class="info-row">
+      <span class="label">Zip Code:</span>
+      <span class="value">{{ data.customer.zipCode }}</span>
+    </div>
+    
+    <div class="info-row">
+      <span class="label">Website:</span>
+      <span class="value">{{ data.customer.website }}</span>
+    </div>
+  </div>
+  
+  <div class="dialog-actions">
+    <button mat-button (click)="close()">Close</button>
+  </div>
+</div>

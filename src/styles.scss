@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* GT Bank Theme Colors */
+:root {
+  --primary-color: #e26a6a;
+  --primary-light: #f9e0dd;
+  --secondary-color: #e0e4e9;
+  --text-color: #333;
+  --light-gray: #e0e0e0;
+  --dark-gray: #5a5a5a;
+}

@@ -1,0 +1,301 @@
+.customer-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.add-customer-btn {
+  // Base styling
+  background: linear-gradient(135deg, #e26a6a 0%, #d35555 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 14px 28px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  
+  // Layout
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  min-width: 140px !important;
+  
+  // Shadow and depth
+  box-shadow: 
+    0 4px 12px rgba(226, 106, 106, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  
+  // Transitions
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transform: translateY(0) !important;
+  
+  // Hover effects
+  &:hover {
+    background: linear-gradient(135deg, #d35555 0%, #c44444 100%) !important;
+    box-shadow: 
+      0 6px 20px rgba(226, 106, 106, 0.4),
+      0 4px 8px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  // Active/pressed state
+  &:active {
+    transform: translateY(0) !important;
+    box-shadow: 
+      0 2px 8px rgba(226, 106, 106, 0.4),
+      0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  // Focus state for accessibility
+  &:focus {
+    outline: none !important;
+    box-shadow: 
+      0 4px 12px rgba(226, 106, 106, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      0 0 0 3px rgba(226, 106, 106, 0.2) !important;
+  }
+  
+  // Icon styling
+  .btn-icon {
+    font-size: 18px !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+    transition: transform 0.2s ease !important;
+  }
+  
+  // Text styling
+  .btn-text {
+    line-height: 1 !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  }
+  
+  // Hover animation for icon
+  &:hover .btn-icon {
+    transform: rotate(90deg) !important;
+  }
+  
+  // Disabled state
+  &:disabled {
+    background: #cccccc !important;
+    color: #888888 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    cursor: not-allowed !important;
+    
+    &:hover {
+      background: #cccccc !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.clickable-name {
+  color: #e26a6a;
+  font-weight: 500;
+  cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-container {
+  margin-right: 20px;
+}
+
+.logo {
+  height: 60px;
+}
+
+h1 {
+  color: #e26a6a;
+  margin: 0;
+}
+
+.section-title {
+  text-align: right;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.features-container {
+  margin-bottom: 30px;
+}
+
+.features-diagram {
+  position: relative;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.center-feature {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.feature-box {
+  background-color: #f9e0dd;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.feature-box.center {
+  background-color: #e0e4e9;
+  transform: rotate(45deg);
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-box.center span {
+  transform: rotate(-45deg);
+}
+
+.outer-features {
+  .feature-box {
+    position: absolute;
+  }
+  
+  .feature-box:nth-child(1) {
+    top: 20%;
+    left: 5%;
+  }
+  
+  .feature-box:nth-child(2) {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .feature-box:nth-child(3) {
+    top: 20%;
+    right: 5%;
+  }
+  
+  .feature-box:nth-child(4) {
+    bottom: 20%;
+    right: 5%;
+  }
+  
+  .feature-box:nth-child(5) {
+    bottom: 20%;
+    left: 5%;
+  }
+  
+  .feature-box:nth-child(6) {
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.content {
+  margin-top: 30px;
+}
+
+.customer-table-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  color: #5a5a5a;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: #f5f5f5;
+  color: #444;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+tr.selected {
+  background-color: #fff3f3;
+}
+
+.actions {
+  white-space: nowrap;
+}
+
+.btn-edit, .btn-delete {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-edit {
+  background-color: #69a1e2;
+  color: white;
+  
+  &:hover {
+    background-color: #5590d6;
+  }
+}
+
+.btn-delete {
+  background-color: #e26a6a;
+  color: white;
+  
+  &:hover {
+    background-color: #d35555;
+  }
+}
+
+.no-data {
+  text-align: center;
+  color: #777;
+  padding: 30px 0;
+}

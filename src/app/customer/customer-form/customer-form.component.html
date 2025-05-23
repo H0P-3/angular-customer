@@ -1,0 +1,54 @@
+<!-- CustomerFormComponent -->
+<div class="form-container" [class.edit-mode]="formMode === 'edit'" [class.standalone-page]="router.url === '/customer/create'" [class.dialog-mode]="isDialog">
+  <div class="form-card">
+    <h3>{{ formMode === 'add' ? 'Add Customer' : 'Edit Customer' }}</h3>
+    
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label for="name">Customer Name</label>
+        <input id="name" type="text" formControlName="name">
+        <div class="error-message" *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.touched">
+          Customer name is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input id="address" type="text" formControlName="address">
+        <div class="error-message" *ngIf="customerForm.get('address')?.invalid && customerForm.get('address')?.touched">
+          Address is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" type="text" formControlName="phoneNumber">
+        <div class="error-message" *ngIf="customerForm.get('phoneNumber')?.invalid && customerForm.get('phoneNumber')?.touched">
+          Valid phone number is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="zipCode">Zip Code</label>
+        <input id="zipCode" type="text" formControlName="zipCode">
+        <div class="error-message" *ngIf="customerForm.get('zipCode')?.invalid && customerForm.get('zipCode')?.touched">
+          Zip code is required
+        </div>
+      </div>
+
+<!-- CustomerFormComponent -->
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input id="website" type="text" formControlName="website">
+        <div class="error-message" *ngIf="customerForm.get('website')?.invalid && customerForm.get('website')?.touched">
+          Valid website address is required
+        </div>
+      </div>
+      
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">{{ formMode === 'add' ? 'Add Customer' : 'Update Customer' }}</button>
+        <button type="button" class="btn-secondary" (click)="resetForm()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
